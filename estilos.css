@@ -5,42 +5,40 @@
 }
 
 @font-face {
-  font-family: fuete1;
-  src: url(FontsFree-Net-SF-Pro-Rounded-Regular.ttf);
-}
-
-html, body {
-  height: 100%;
+  font-family: 'fuente1';
+  src: url('./FontsFree-Net-SF-Pro-Rounded-Regular.ttf') format('truetype');
 }
 
 body {
-  all: unset;
+  font-family: 'fuente1', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-  height: 100%;
   overflow-x: hidden;
-  flex: 1;
-  background: linear-gradient(46deg, rgba(103.08, 253.92, 226.77, 0.50) 0%, rgba(221, 153, 255, 0.50) 49%, rgba(0, 150.56, 231.63, 0.50) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 70%), radial-gradient(ellipse 80.64% 86.00% at 50.00% 42.43%, #E0F4FF 0%, #99DDFF 50%, #66B2FF 100%);
- background: linear-gradient(180deg, #D9EBFF 46%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse 117.76% 55.61% at 50.00% 100.00%, white 43%, #D9EBFF 75%, #A8D1FF 100%), #D6F0FF;
+
+  background: 
+    linear-gradient(180deg, #D9EBFF 0%, rgba(255, 255, 255, 0) 30%),
+    radial-gradient(ellipse 117.76% 55.61% at 50% 50%, white 40%, #D9EBFF 75%, #A8D1FF 100%),
+    #D6F0FF;
+
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top;
 }
 
-
+p, span, h1, h2, h3, h4, a, div, button, li, ul, article {
+  font-family: 'fuente1', sans-serif;
+}
 
 /* ==================== NAVBAR ==================== */
-
 
 .navbar {
   width: 1184px;
   height: 46px;
-  padding: 8px;
+  padding: 8px 24px; 
   margin: 20px auto;
   background: white;
   border-radius: 32px;
@@ -48,26 +46,68 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 0 1px #ccc;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 8px 0;
+  display: none;
+  z-index: 10;
+  min-width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #1d222b;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f4ff;
+  color: #0051ff;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .navbar-left {
-  width: 857px;
-  height: 40px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 40px; 
+  flex: 1;
 }
 
 .logo {
   height: 30px;
   width: auto;
+  margin-right: 20px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 24px;
-   padding-left: 16px; padding-right: 16px; padding-top: 8px;
+  padding: 8px 0;
+  margin: 0;
+  align-items: center;
 }
 
 .nav-links a {
@@ -78,16 +118,17 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-}
-
-.arrow {
-  font-size: 10px;
+  white-space: nowrap;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.arrow {
+  font-size: 10px;
 }
 
 .button-free,
@@ -135,13 +176,14 @@ body {
   font-size: 14px;
 }
 
-/* ==================== HERO ==================== */
 
+/* ==================== HERO ==================== */
 
 .hero {
   padding: 24px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-container {
@@ -150,6 +192,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .hero-text {
@@ -182,6 +225,7 @@ body {
   gap: 16px;
   justify-content: flex-start;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .hero-buttons a {
@@ -197,7 +241,14 @@ body {
   cursor: pointer;
 }
 
+.hero-image {
+  display: flex;
+  width: 668px;
+  height: 516px;
+}
+
 /* ==================== OPINIONES ==================== */
+
 .opiniones-container {
   max-width: 1060px;
   height: 130px;
@@ -254,10 +305,8 @@ body {
   box-sizing: border-box;
   height: 42px;
   width: 100%;
-    background-color: white; /* ← Esto es lo que necesitas */
-      border-radius: 12px;   /* Solo las esquinas inferiores */
-
-
+  background-color: white;
+  border-radius: 12px;
 }
 
 .stats {
@@ -285,12 +334,7 @@ body {
   margin-right: 4px;
 }
 
-/* Quitar borde visible (por defecto no hay) y respetar espacio arriba con margin en container */
-
-
 /* ==================== FEATURES ==================== */
-
-
 
 .features {
   width: 1160px;
@@ -301,8 +345,8 @@ body {
 
 .features h1 {
   text-align: center;
-  font-size: 36px; 
-  font-weight: bold; 
+  font-size: 36px;
+  font-weight: bold;
   margin: 0 0 50px 0;
 }
 
