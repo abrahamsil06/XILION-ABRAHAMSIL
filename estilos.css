@@ -9,19 +9,33 @@
   src: url(FontsFree-Net-SF-Pro-Rounded-Regular.ttf);
 }
 
-body {
-  font-family: fuete1;
-  color: #1d222b;
-  background: linear-gradient(180deg, #d9ebff 46%, rgba(255, 255, 255, 0) 100%),
-    radial-gradient(
-      ellipse 117.76% 55.61% at 50% 100%,
-      white 43%,
-      #d9ebff 75%,
-      #a8d1ff 100%
-    ),
-    #d6f0ff;
-  cursor: pointer;
+html, body {
+  height: 100%;
 }
+
+body {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  flex: 1;
+  background: linear-gradient(46deg, rgba(103.08, 253.92, 226.77, 0.50) 0%, rgba(221, 153, 255, 0.50) 49%, rgba(0, 150.56, 231.63, 0.50) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 70%), radial-gradient(ellipse 80.64% 86.00% at 50.00% 42.43%, #E0F4FF 0%, #99DDFF 50%, #66B2FF 100%);
+ background: linear-gradient(180deg, #D9EBFF 46%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse 117.76% 55.61% at 50.00% 100.00%, white 43%, #D9EBFF 75%, #A8D1FF 100%), #D6F0FF;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* ==================== NAVBAR ==================== */
+
 
 .navbar {
   width: 1184px;
@@ -37,6 +51,8 @@ body {
 }
 
 .navbar-left {
+  width: 857px;
+  height: 40px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -51,6 +67,7 @@ body {
   display: flex;
   list-style: none;
   gap: 24px;
+   padding-left: 16px; padding-right: 16px; padding-top: 8px;
 }
 
 .nav-links a {
@@ -72,10 +89,10 @@ body {
   align-items: center;
   gap: 16px;
 }
-/* Botón Probar Gratis (nav) y Comenzar Hoy Gratis (hero) */
+
 .button-free,
 .start-free {
-  background-color: #0051ff; /* Azul */
+  background-color: #0051ff;
   color: white;
   border: none;
   border-radius: 30px;
@@ -89,11 +106,10 @@ body {
 
 .button-free:hover,
 .start-free:hover {
-  background-color: #003ecc; /* Azul más oscuro */
+  background-color: #003ecc;
   box-shadow: 0 4px 12px rgba(0, 81, 255, 0.3);
 }
 
-/* Botón Obtener Demo */
 .get-demo {
   background-color: white;
   color: #0051ff;
@@ -108,10 +124,9 @@ body {
 }
 
 .get-demo:hover {
-  background-color: #f0f8ff;
+  background-color: #e6f0ff;
   color: #003ecc;
 }
-
 
 .nav-link {
   color: #1d222b;
@@ -120,51 +135,10 @@ body {
   font-size: 14px;
 }
 
-.start-free {
-  background-color: #0051ff;
-  color: white;
-  border-radius: 30px;
-  width: 140px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-}
+/* ==================== HERO ==================== */
 
-.start-free:hover {
-  background-color: #003ecc;
-}
-
-.get-demo {
-  background-color: white;
-  color: #0051ff;
-  border: 2px solid #0051ff;
-  border-radius: 30px;
-  width: 140px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.get-demo:hover {
-  background-color: #e6f0ff;
-  color: #003ecc;
-}
 
 .hero {
-  background-color: #d6ecff;
   padding: 24px;
   display: flex;
   justify-content: center;
@@ -172,12 +146,10 @@ body {
 
 .hero-container {
   width: 1160px;
-  height: 516px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  background-color: #d6ecff;
 }
 
 .hero-text {
@@ -222,70 +194,196 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  box-sizing: border-box;
   cursor: pointer;
+}
+
+/* ==================== OPINIONES ==================== */
+.opiniones-container {
+  max-width: 1060px;
+  height: 130px;
+  margin: 24px auto 0;
+  padding: 0 150px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .customer-reviews {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  padding: 2rem 0;
-  background: linear-gradient(white, #eaf5ff); 
+  height: 64px;
+  gap: 24px;
+  box-sizing: border-box;
 }
 
 .review {
+  flex: 1;
   text-align: center;
-  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .review h3 {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  margin: 4px 0 2px;
 }
 
 .review p {
-  color: #666;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  margin: 0;
+  color: #444;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
 }
 
 .stars img {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  margin: 0 1px;
 }
 
 .web-version {
+  padding-top: 16px;
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  box-sizing: border-box;
+  height: 42px;
+  width: 100%;
+    background-color: white; /* ← Esto es lo que necesitas */
+      border-radius: 12px;   /* Solo las esquinas inferiores */
+
+
 }
 
 .stats {
   display: flex;
-  gap: 12px; 
-  background: white;
-  border-radius: 24px;
-  padding: 12px 18px; 
-  width: 350px; 
-  height: 36px; 
-  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: #222;
   justify-content: space-between;
-  font-family: sans-serif;
-  font-size: 16px; 
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-sizing: border-box;
 }
 
 .stats li {
-  list-style: none;
-  display: flex;
-  align-items: center;
+  padding: 0 8px;
+  flex: 1;
+  text-align: center;
   white-space: nowrap;
+  font-weight: 600;
 }
 
-.stats li strong {
-  color: #1a4eff;
-  margin-right: 6px;
+.stats strong {
+  color: #0056ff;
+  margin-right: 4px;
+}
+
+/* Quitar borde visible (por defecto no hay) y respetar espacio arriba con margin en container */
+
+
+/* ==================== FEATURES ==================== */
+
+
+
+.features {
+  width: 1160px;
+  padding: 96px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.features h1 {
+  text-align: center;
+  font-size: 36px; 
+  font-weight: bold; 
+  margin: 0 0 50px 0;
+}
+
+.feature {
+  max-width: 100%;
+  margin: 0 0 50px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.feature.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.feature h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+}
+
+.feature p {
+  font-size: 16px;
+  color: #222;
+  margin: 0 0 16px 0;
+}
+
+.feature ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.feature li {
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  color: #111;
+}
+
+.feature li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007aff;
   font-weight: bold;
+}
+
+.explore {
+  color: #1e90ff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.explore:hover {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.feature img {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  min-width: 300px;
 }
